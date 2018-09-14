@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+/**
+ * main - entry point
+ *
+ * Return: Always 0 (success)
+ */
+
+int main(void)
+{
+	int a;
+	int c;
+	int sp;
+
+	a = 48;
+	comma = 44;
+	sp = 32;
+
+	while (a <= 57)
+	{
+		putchar(a);
+		if (a < 57)
+		{
+			a++;
+			putchar(c);
+			putchar(sp);
+		}
+		else
+		{
+			a++;
+		}
+	}
+
+	putchar('\n');
+
+	return (0);
+}
