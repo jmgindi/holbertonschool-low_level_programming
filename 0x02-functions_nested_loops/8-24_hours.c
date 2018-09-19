@@ -6,11 +6,12 @@
 
 void jack_bauer(void)
 {
-	int h;
+	int h = 0;
 	int m;
 
 	while (h < 24)
 	{
+		m = 0;
 		while (m < 60)
 		{
 
@@ -23,6 +24,5 @@ void jack_bauer(void)
 			m++;
 		}
 		h++;
-		m = 0;
 	}
 }
