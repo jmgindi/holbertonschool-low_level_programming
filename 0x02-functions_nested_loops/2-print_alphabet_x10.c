@@ -18,7 +18,7 @@ void print_alphabet_x10(void);
 			let++;
 		}
 
-		putchar('\n');
+		_putchar('\n');
 		let = 'a';
 		i++;
 	}

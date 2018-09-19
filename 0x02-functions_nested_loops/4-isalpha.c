@@ -8,7 +8,7 @@
  * Return: 1 if alphabetic, 0 otherwise
  */
 
-int isalpha(int c)
+int _isalpha(int c)
 {
 	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
 	{
