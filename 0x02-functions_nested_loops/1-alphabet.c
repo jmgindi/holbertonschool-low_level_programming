@@ -4,7 +4,7 @@
  * print_alphabet - prints a-z followed by a new line
  */
 
-void print_alphabet(void);
+void print_alphabet(void)
 {
 	char lett = 'a';
 
