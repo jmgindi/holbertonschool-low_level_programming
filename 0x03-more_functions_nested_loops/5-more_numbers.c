@@ -16,7 +16,7 @@ void more_numbers(void)
 		n = 0;
 		while (n <= 14)
 		{
-			if (num < 10)
+			if (n < 10)
 			{
 				y = n;
 			}
