@@ -11,7 +11,7 @@ void more_numbers(void)
 	int x = 0;
 	int y = 0;
 
-	while (x <= 10)
+	while (c <= 10)
 	{
 		n = 0;
 		while (n <= 14)
@@ -31,6 +31,6 @@ void more_numbers(void)
 			n++;
 		}
 		_putchar('\n');
-		n++;
+		c++;
 	}
 }
