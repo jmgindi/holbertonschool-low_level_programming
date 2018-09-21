@@ -10,7 +10,7 @@ int main(void)
 {
 	int x;
 
-	for (x = 1; x < 101; x++)
+	for (x = 1; x < 100; x++)
 	{
 		if (x % 15 == 0)
 		{
@@ -29,7 +29,7 @@ int main(void)
 			printf("%d ", x);
 		}
 	}
-	printf("\n");
+	printf("Buzz\n");
 
 	return (0);
 }
