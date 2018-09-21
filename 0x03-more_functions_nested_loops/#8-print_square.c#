@@ -1,0 +1,15 @@
+#include "holberton.h"
+
+/**
+ * print_square - prints a square with side length "size"
+ * @size: side length of square
+ */
+
+void print_square(int size)
+{
+	int x;
+	int y;
+
+	if (size <= 0)
+		putchar('\n')
+			;}
