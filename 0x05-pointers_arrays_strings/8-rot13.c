@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * leet - translates a string to leet
+ * rot13 - translates a string to rot13
  * @s: string
  *
  * Return: pointer to string
