@@ -7,7 +7,7 @@
  * Return: pointer to string
  */
 
-char *leet(char *s)
+char *rot13(char *s)
 {
 	int count, lcount;
 
