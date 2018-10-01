@@ -1,0 +1,29 @@
+#include "holberton.h"
+
+/**
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
+char *_strpbrk(char *s, char *accept)
+{
+	unsigned int count, a_count;
+
+	for (count = 0; s[count]; count++)
+	{
+		for (a_count = 0; accept[a_count] != '\0'; a_count++)
+		{
+			if (s[count] == accept[a_count])
+			{
+				s = &s[count];
+				return (s);
+			}
+		}
+	}
+
+	return ('\0');
+}
