@@ -2,8 +2,8 @@
 
 /**
  * factors - checks for perfect square factors of number
- * @n: number to check 
- * @x: recursive checks
+ * @n: number to check
+ * @f: recursive checks
  *
  * Return: square root factor of n, -1 otherwise
  */
