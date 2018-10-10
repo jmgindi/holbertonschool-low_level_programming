@@ -6,7 +6,7 @@
  * @s1: string 1
  * @s2: string 2
  *
- * Return: pointer to new concatenated string 
+ * Return: pointer to new concatenated string
  * or NULL upon failure
  */
 
