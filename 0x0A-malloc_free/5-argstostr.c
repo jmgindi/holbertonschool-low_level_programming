@@ -40,6 +40,8 @@ char *argstostr(int ac, char **av)
 			arg_string[i] = av[i1][i2];
 			i++;
 		}
+		arg_string[i] = '\n';
+		i++;
 	}
 
 	arg_string[i] = '\0';
