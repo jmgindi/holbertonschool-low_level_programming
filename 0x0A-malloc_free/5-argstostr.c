@@ -46,5 +46,5 @@ char *argstostr(int ac, char **av)
 
 	arg_string[i] = '\0';
 
-	return(arg_string);
+	return (arg_string);
 }
