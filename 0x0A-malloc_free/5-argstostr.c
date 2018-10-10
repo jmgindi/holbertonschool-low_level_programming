@@ -42,7 +42,7 @@ char *argstostr(int ac, char **av)
 		}
 	}
 
-	arg_string[i3] = '\0';
+	arg_string[i] = '\0';
 
 	return(arg_string);
 }
