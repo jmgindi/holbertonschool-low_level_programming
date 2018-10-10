@@ -1,0 +1,11 @@
+#include "holberton.h"
+#include <stdlib.h>
+
+/**
+ * argstostr - concatenates all arguments of a program
+ * @ac: number of arguments
+ * @av: array containing arguments
+ *
+ * Return: pointer to string containing arguments
+ * or NULL
+ */
