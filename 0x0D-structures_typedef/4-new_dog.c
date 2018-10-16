@@ -2,6 +2,23 @@
 #include <stdlib.h>
 
 /**
+ * _strlen - returns the length of a string
+ * @s: string to find length of
+ *
+ * Return: length of string
+ */
+
+int _strlen(char *s)
+{
+	int l = 0;
+
+	while (*(s + l) != '\0')
+		l++;
+
+	return (l);
+}
+
+/**
  * *_strcpy - copies a string to a new buffer
  * @dest: destination for copy
  * @src: source
@@ -38,11 +55,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (ret == NULL)
 		return (NULL);
 
-	ret->name = malloc(sizeof(ret->name));
+	ret->name = malloc((_strlen(name) + 1) * sizeof(char));
 	if (ret->name == NULL)
 		return (NULL);
 
-	ret->owner = malloc(sizeof(ret->owner));
+	ret->owner = malloc((_strlen(owner) + 1) * sizeof(char));
 	if (ret->owner == NULL)
 		return (NULL);
 
