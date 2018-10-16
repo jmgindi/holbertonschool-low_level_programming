@@ -36,6 +36,8 @@ char *_strcpy(char *dest, char *src)
 		l++;
 	}
 
+	dest[l] = '\0';
+
 	return (dest);
 }
 
