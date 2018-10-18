@@ -52,11 +52,16 @@ int op_mul(int a, int b)
  * @a: dividend
  * @b: divisor
  *
- * Return: quotient of a and b
+ * Return: quotient of a and b, exit 100 on fail
  */
 
 int op_div(int a, int b)
 {
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
 	int quo = a / b;
 
 	return (quo);
@@ -67,11 +72,17 @@ int op_div(int a, int b)
  * @a: dividend
  * @b: divisor
  *
- * Return: a % b
+ * Return: a % b, exits 100 on fail
  */
 
 int op_mod(int a, int b)
 {
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+
 	int mod = a % b;
 
 	return (mod);
