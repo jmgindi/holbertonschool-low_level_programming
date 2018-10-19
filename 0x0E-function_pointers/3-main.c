@@ -16,8 +16,6 @@ int main(int argc, char *argv[])
 	char *operator;
 	int (*result)(int, int);
 
-	printf("%d\n", argc);
-
 	if (argc != 4)
 	{
 		printf("Error\n");
