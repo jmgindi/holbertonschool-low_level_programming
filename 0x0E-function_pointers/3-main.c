@@ -7,14 +7,16 @@
  * @argc: number of arguments
  * @argv: array containing arguments
  *
- * Return: 0 on success, exit code else 
+ * Return: 0 on success, exit code else
  */
 
 int main(int argc, char *argv[])
 {
 	int i, k;
 	char *operator;
-	int result;
+	int (*result)(int, int);
+
+	printf("%d\n", argc);
 
 	if (argc != 4)
 	{
@@ -23,15 +25,23 @@ int main(int argc, char *argv[])
 	}
 
 	if (argv[2][1] != '\0')
+	{
+		printf("Error\n");
 		exit(99);
+	}
 
 	i = atoi(argv[1]);
 	operator = argv[2];
 	k = atoi(argv[3]);
 
-	result = (get_op_func(operator)(i, k));
+	result = get_op_func(operator);
 
-	printf("%d\n", result);
+	if (result == NULL)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+	printf("%d\n", result(i, k));
 
 	return (0);
 }

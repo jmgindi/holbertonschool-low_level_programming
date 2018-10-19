@@ -22,7 +22,7 @@ int op_add(int a, int b)
  * @a: first number
  * @b: second number
  *
- * Return - difference of a - b
+ * Return: difference of a - b
  */
 
 int op_sub(int a, int b)
@@ -57,12 +57,13 @@ int op_mul(int a, int b)
 
 int op_div(int a, int b)
 {
+	int quo = a / b;
+
 	if (b == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
-	int quo = a / b;
 
 	return (quo);
 }
@@ -77,13 +78,13 @@ int op_div(int a, int b)
 
 int op_mod(int a, int b)
 {
+	int mod = a % b;
+
 	if (b == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
-
-	int mod = a % b;
 
 	return (mod);
 }
