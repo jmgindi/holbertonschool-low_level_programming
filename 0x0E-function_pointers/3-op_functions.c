@@ -57,13 +57,15 @@ int op_mul(int a, int b)
 
 int op_div(int a, int b)
 {
-	int quo = a / b;
+	int quo;
 
 	if (b == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
+
+	quo = a / b;
 
 	return (quo);
 }
@@ -78,13 +80,15 @@ int op_div(int a, int b)
 
 int op_mod(int a, int b)
 {
-	int mod = a % b;
+	int mod;
 
 	if (b == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
+
+	mod = a % b;
 
 	return (mod);
 }
