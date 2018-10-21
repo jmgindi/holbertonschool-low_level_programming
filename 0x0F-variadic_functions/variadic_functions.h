@@ -3,7 +3,7 @@
 
 typedef struct flist {
 	char *name;
-	int (*type)(va_list);
+	int (*type)(va_list valist);
 } tlist;
 
 int sum_them_all(const unsigned int n, ...);

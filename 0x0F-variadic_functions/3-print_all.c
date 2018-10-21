@@ -13,6 +13,7 @@ void print_all(const char * const format, ...)
 	int i, j;
 	va_list valist;	
 	char *sep = "";
+
 	flist tlist[] = {
 		{"c", print_c},
 		{"i", print_i},
@@ -21,13 +22,10 @@ void print_all(const char * const format, ...)
 		{NULL, NULL},
 	};
 
-	if (format == NULL)
-		return;
-
 	va_start(valist, format);
 	i = 0;
 
-	while (format[i] != '\0')
+	while (format != NULL && format[i] != '\0')
 	{
 		j = 0;
 		while (tlist[j].name != NULL)
@@ -35,7 +33,7 @@ void print_all(const char * const format, ...)
 			if (*tlist[j].type == format[i])
 			{
 				printf("%s", sep);
-				tlist[j].f(va_arg(valist, void *));
+				tlist[j].type(valist);
 				sep = ", ";
 			}
 			j++;
