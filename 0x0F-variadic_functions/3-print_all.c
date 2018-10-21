@@ -10,7 +10,7 @@
 
 void print_all(const char * const format, ...)
 {
-	unsigned int i, j;
+	unsigned int i, j = 0;
 	va_list valist;	
 	char *sep = "";
 
@@ -27,7 +27,6 @@ void print_all(const char * const format, ...)
 
 	while (format != NULL && format[i] != '\0')
 	{
-		j = 0;
 		while (tlist[j].name != NULL)
 		{
 			if (format[i] == *tlist[j].name)
@@ -39,6 +38,7 @@ void print_all(const char * const format, ...)
 			j++;
 		}
 		i++;
+		j = 0;
 	}
 
 	printf("\n");
@@ -71,5 +71,5 @@ void print_s(va_list valist)
 		printf("(nil)");
 		return;
 	}
-	printf("%s", va_arg(valist, char *));
+	printf("%s", str);
 }
