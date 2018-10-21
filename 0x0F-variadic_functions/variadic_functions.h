@@ -2,8 +2,8 @@
 #define __VARIADIC_FUNCTIONS_H__
 
 typedef struct flist {
-	char *form;
-	int (*f)(va_list);
+	char *name;
+	int (*type)(va_list);
 } tlist;
 
 int sum_them_all(const unsigned int n, ...);
