@@ -14,7 +14,7 @@ void print_all(const char * const format, ...)
 	va_list valist;	
 	char *sep = "";
 
-	flist tlist[] = {
+	formatlist tlist[] = {
 		{"c", print_c},
 		{"i", print_i},
 		{"f", print_fl},
@@ -46,22 +46,22 @@ void print_all(const char * const format, ...)
 	va_end(valist);
 }
 
-void print_c(va_list flist)
+void print_c(va_list valist)
 {
-	printf("%c", va_arg(flist, int));
+	printf("%c", va_arg(valist, int));
 }
 
-void print_i(va_list flist)
+void print_i(va_list valist)
 {
-	printf("%d", va_arg(flist, int));
+	printf("%d", va_arg(valist, int));
 }
 
-void print_fl(va_list flist)
+void print_fl(va_list valist)
 {
-	printf("%f", va_arg(flist, double));
+	printf("%f", va_arg(valist, double));
 }
 
-void print_s(va_list flist)
+void print_s(va_list valist)
 {
 	char *str;
 
@@ -71,5 +71,5 @@ void print_s(va_list flist)
 		printf("(nil)");
 		return;
 	}
-	printf("%s", va_arg(flist, char *));
+	printf("%s", va_arg(valist, char *));
 }
