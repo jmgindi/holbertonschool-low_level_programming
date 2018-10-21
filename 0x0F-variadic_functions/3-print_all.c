@@ -10,7 +10,7 @@
 
 void print_all(const char * const format, ...)
 {
-	int i, j;
+	unsigned int i, j;
 	va_list valist;	
 	char *sep = "";
 
