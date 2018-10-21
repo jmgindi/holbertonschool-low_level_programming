@@ -30,7 +30,7 @@ void print_all(const char * const format, ...)
 		j = 0;
 		while (tlist[j].name != NULL)
 		{
-			if (*tlist[j].type == format[i])
+			if (format[i] == *tlist[j].name)
 			{
 				printf("%s", sep);
 				tlist[j].type(valist);
