@@ -6,6 +6,12 @@
 #include <stdarg.h>
 #include <stdlib.h>
 
+/**
+ * struct flist - struct to match name with function 
+ * @name: name
+ * @type: function to match
+ */
+
 typedef struct flist 
 {
 	char *name;

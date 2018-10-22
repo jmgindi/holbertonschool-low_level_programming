@@ -4,7 +4,9 @@
 #include <stdlib.h>
 
 /**
- *
+ * print_numbers - prints numbers
+ * @separator: string containing separator
+ * @n: number of arguments
  */
 
 void print_numbers(const char *separator, const unsigned int n, ...)

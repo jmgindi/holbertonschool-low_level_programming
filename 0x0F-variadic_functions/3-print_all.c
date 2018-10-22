@@ -4,14 +4,14 @@
 #include "variadic_functions.h"
 
 /**
- *
- *
+ * print_all - prints all args
+ * @format: string containing format arguments
  */
 
 void print_all(const char * const format, ...)
 {
 	unsigned int i, j = 0;
-	va_list valist;	
+	va_list valist;
 	char *sep = "";
 
 	formatlist tlist[] = {
@@ -46,20 +46,40 @@ void print_all(const char * const format, ...)
 	va_end(valist);
 }
 
+/**
+ * print_c - prints a character
+ * @valist: argument list
+ */
+
 void print_c(va_list valist)
 {
 	printf("%c", va_arg(valist, int));
 }
+
+/**
+ * print_i - prints an integer
+ * @valist: argument list
+ */
 
 void print_i(va_list valist)
 {
 	printf("%d", va_arg(valist, int));
 }
 
+/**
+ * print_fl - prints a float
+ * @valist: argument list
+ */
+
 void print_fl(va_list valist)
 {
 	printf("%f", va_arg(valist, double));
 }
+
+/**
+ * print_s - prints a string
+ * @valist: argument list
+ */
 
 void print_s(va_list valist)
 {
