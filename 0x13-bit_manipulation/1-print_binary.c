@@ -9,10 +9,7 @@ void print_binary(unsigned long int n)
 {
 	int y, z;
 
-	if (n < 0)
-		n = -n;
-
-	if (n < 2 && n >= 0)
+	if (n < 2)
 	{
 		_putchar(n + '0');
 		return;
