@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	}
 
 	(void) cpcount;
-	
+
 	free(buf);
 	return (0);
 }
