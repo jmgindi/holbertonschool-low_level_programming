@@ -25,15 +25,9 @@ int create_file(const char *filename, char *text_content)
 	if (newfile == -1)
 		return (-1);
 
-	if (i == 0)
-		;
-
-	else
-	{
-		wcount = write(newfile, text_content, i);
-		if (wcount == -1)
-			return (-1);
-	}
+	wcount = write(newfile, text_content, i);
+	if (wcount == -1)
+		return (-1);
 
 	close(newfile);
 	return (1);
