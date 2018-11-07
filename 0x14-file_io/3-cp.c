@@ -13,6 +13,12 @@ int main(int argc, char *argv[])
 	int cpcount, ocount, o2count;
 	char *buf;
 
+	if (argc != 3)
+	{
+		dprintf(STDERR_FILENO, "Usage cp file_from file_to\n");
+		exit(97);
+	}
+
 	buf = malloc(1024 * sizeof(char));
 	if (buf == NULL)
 		return (-1);
