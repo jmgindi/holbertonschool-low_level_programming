@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * argstostr - concatenates all arguments
+ * argstostr - concatenates all arguments into a string
  * @ac: number of arguments
  * @av: array containing arguments
  *
@@ -13,32 +13,26 @@
 
 char *argstostr(int ac, char **av)
 {
-	//declare variables
-	int x, z, i;
+	int x, arg_len, i;
 	char *str;
 
 	i = 0;
 
-	//check constraints
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	//find size of string = number of chars to allocate
 	for (i = 0; i <= ac; i++)
 	{
 		for (x = 0; av[i][x] != '\0'; x++)
-			z++;
-		//allocate space for the newline
-		z++;
+			arg_len++;
+		arg_len++; /* add space for null */
 	}
 
-	//allocate memory for new string plus null byte and check
 	str = malloc(sizeof(char *) * (i + 1));
 
 	if (str == NULL)
 		return (NULL);
 
-	//copy the args into the new string, separated by newlines 
 	for (i = 0; i < ac; i++)
 	{
 		for (x = 0; av[i][x] != '\0'; x++)
@@ -48,8 +42,6 @@ char *argstostr(int ac, char **av)
 		str[x] = '\n';
 		x++;
 	}
-
-	//add terminating null
 	str[x] = '\0';
 
 	return (str);
