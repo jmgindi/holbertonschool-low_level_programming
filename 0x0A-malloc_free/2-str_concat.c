@@ -1,21 +1,19 @@
 #include "holberton.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 /**
  * str_concat - concatenates two strings
- * @s1: string 1
+ * @s1: string 1 
  * @s2: string 2
  *
  * Return: pointer to new concatenated string
- * or NULL upon failure
  */
 
 char *str_concat(char *s1, char *s2)
 {
-	char *dest;
-	unsigned int i = 0;
-	unsigned int l1 = 0;
-	unsigned int l2 = 0;
+	int l, l2, t;
+	char *new;
 
 	if (s1 == NULL)
 		s1 = "";
@@ -23,24 +21,25 @@ char *str_concat(char *s1, char *s2)
 	if (s2 == NULL)
 		s2 = "";
 
-	while (s1[l1] != '\0')
-		l1++;
+	for (l = 0; s1[l] != '\0'; l++)
+		;
 
-	while (s2[l2] != '\0')
-		l2++;
+	for (l2 = 0; s2[l2] != '\0'; l2++)
+		;
 
-	l2++;
+	new = malloc(sizeof(char) * (l + l2 + 1));
 
-	dest = malloc((l1 + l2) * sizeof(char));
-
-	if (dest == NULL)
+	if (new == NULL)
 		return (NULL);
 
-	for (i = 0; i < l1; i++)
-		dest[i] = s1[i];
+	for (t = 0; t < l; t++)
+		new[t] = s1[t];
 
-	for (i = 0; i < l2; i++)
-		dest[i + l1] = s2[i];
+	for (t = t; t < (l + l2); t++)
+		new[t] = s2[t];
 
-	return (dest);
+	t++;
+	new[t] = '\0';
+
+	return (new);
 }

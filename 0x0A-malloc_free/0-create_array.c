@@ -1,29 +1,33 @@
 #include "holberton.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * create_array - initializes an array with all bytes a specific char
- * @size: size of array
- * @c: char to initialize with
+ * create_array - initializes an array of a specific char
+ * @size: size of the array
+ * @c: char to init with
  *
- * Return: pointer to the array, or NULL if fail/size 0
+ * Return: pointer to the array, NULL on failure
  */
 
 char *create_array(unsigned int size, char c)
 {
-	char *dest;
-	unsigned int i;
+	unsigned int i = 0;
+	char *n;
 
 	if (size <= 0)
 		return (NULL);
 
-	dest = malloc(size * (sizeof(char)));
+	n = malloc(sizeof(int) * size);
 
-	if (dest == NULL)
+	if (n == NULL)
 		return (NULL);
 
-	for (i = 0; i < size; i++)
-		dest[i] = c;
+	while (i < size)
+	{
+		n[i] = c;
+		i++;
+	}
 
-	return (dest);
+	return (n);
 }

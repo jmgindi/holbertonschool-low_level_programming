@@ -1,50 +1,56 @@
 #include "holberton.h"
+#include <stdio.h>
 #include <stdlib.h>
 
 /**
- * argstostr - concatenates all arguments of a program
+ * argstostr - concatenates all arguments
  * @ac: number of arguments
  * @av: array containing arguments
  *
- * Return: pointer to string containing arguments
- * or NULL if ac == 0 || av == NULL || failure
+ * Return: pointer to new string of concatenated args
+ * or NULL on failure (includes ac == 0, av == NULL)
  */
 
 char *argstostr(int ac, char **av)
 {
-	char *arg_string;
-	int string_size, i = 0;
-	int i1, i2;
+	//declare variables
+	int x, z, i;
+	char *str;
 
-	if (ac <= 0 || av == NULL)
+	i = 0;
+
+	//check constraints
+	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	for (i1 = 0; i1 < ac; i1++)
+	//find size of string = number of chars to allocate
+	for (i = 0; i <= ac; i++)
 	{
-		for (i2 = 0; av[i1][i2]; i2++)
-			string_size++;
-		string_size++;
+		for (x = 0; av[i][x] != '\0'; x++)
+			z++;
+		//allocate space for the newline
+		z++;
 	}
 
-	string_size++;
+	//allocate memory for new string plus null byte and check
+	str = malloc(sizeof(char *) * (i + 1));
 
-	arg_string = malloc(string_size * sizeof(char));
-
-	if (arg_string == NULL)
+	if (str == NULL)
 		return (NULL);
 
-	for (i1 = 0; i1 < ac; i1++)
+	//copy the args into the new string, separated by newlines 
+	for (i = 0; i < ac; i++)
 	{
-		for (i2 = 0; av[i1][i2]; i2++)
+		for (x = 0; av[i][x] != '\0'; x++)
 		{
-			arg_string[i] = av[i1][i2];
+			str[i] = av[i][x];
 			i++;
-		}
-		arg_string[i] = '\n';
-		i++;
+		str[x] = '\n';
+		x++;
 	}
 
-	arg_string[i] = '\0';
+	//add terminating null
+	str[x] = '\0';
 
-	return (arg_string);
+	return (str);
 }
