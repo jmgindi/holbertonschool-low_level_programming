@@ -59,6 +59,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	k = strdup(key);
+	if (k == NULL)
+	{
+		free(newnode);
+		return (0);
+	}
 	ukey = (unsigned char *)k;
 	index = key_index(ukey, ht->size);
 
