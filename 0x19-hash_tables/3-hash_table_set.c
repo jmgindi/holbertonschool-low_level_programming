@@ -52,6 +52,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	newnode = make_node(key, value);
+	if (newnode == NULL)
+		return (0);
 
 	k = strdup(key);
 	ukey = (unsigned char *)k;
