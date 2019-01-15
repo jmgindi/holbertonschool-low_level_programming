@@ -48,6 +48,9 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned char *ukey;
 	hash_node_t *newnode;
 
+	if (ht == NULL || ht->array == NULL || ht->size == 0)
+		return (0);
+
 	if (key[0] == '\0')
 		return (0);
 
