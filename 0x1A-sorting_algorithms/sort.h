@@ -25,4 +25,7 @@ void print_list(const listint_t *list);
 /* Bubble Sort */
 void bubble_sort(int *array, size_t size);
 
+/* Insertion Sort */
+void insertion_sort_list(listint_t **list);
+
 #endif /* _SORT_H_ */
