@@ -1,8 +1,8 @@
 | Algorithm                    | Time (Average) | Space | Stability |
 |------------------------------|----------------|-------|-----------|
 | Bubble Sort                  |     O(n^2)     | O(1)  | Stable    |
-| Insertion Sort               |                |       |           |
-| Selection Sort               |                |       |           |
+| Insertion Sort               |     O(n^2)     | O(1)  | Stable    |
+| Selection Sort               |     O(n^2)     | O(1)  | Depends   |
 | Quick Sort                   |                |       |           |
 | Shell Sort                   |                |       |           |
 | Cocktail Sort                |                |       |           |
