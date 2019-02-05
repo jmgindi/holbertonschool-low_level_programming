@@ -2,6 +2,7 @@
 
 /**
  * quick_sort - calculates initial values for sort_quickly
+ *
  * @array: array to sort
  * @size: size of array
  */
@@ -17,9 +18,11 @@ void quick_sort(int *array, size_t size)
 
 /**
  * sort_quickly - function wrapped by quick_sort
+ *
  * @array: array passed from quick_sort
  * @lo: low index
  * @hi: high index
+ * @size: size of array
  */
 void sort_quickly(int *array, ssize_t lo, ssize_t hi, size_t size)
 {
@@ -36,12 +39,17 @@ void sort_quickly(int *array, ssize_t lo, ssize_t hi, size_t size)
 /**
  * partition - Sets the pivot and alligns elements to the
  * left of the pivot point in ascending order
+ *
+ * @array: array passed from quick_sort
  * @lo: first index, moves to right
  * @hi: end of array, where partition is set initially
+ * @size: size of array
+ *
+ * Return: Next pivot position
  */
 size_t partition(int *array, ssize_t lo, ssize_t hi, size_t size)
 {
-	int swap;	
+	int swap;
 	ssize_t j, i = lo - 1;
 
 	for (j = lo; j <= (hi - 1); j++)
@@ -64,7 +72,7 @@ size_t partition(int *array, ssize_t lo, ssize_t hi, size_t size)
 	 * and the hi-value is < our pivot
 	 */
 
-	if (array[hi] < array [i + 1])
+	if (array[hi] < array[i + 1])
 	{
 		swap = array[i + 1];
 		array[i + 1] = array[hi];
