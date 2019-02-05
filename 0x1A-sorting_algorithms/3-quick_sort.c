@@ -1,59 +1,70 @@
 #include "sort.h"
 
 /**
- * quick_sort: Sorts an array of integers using the quick sort method.
- *
- * @array: Array to sort
- * @size: Size of array
- *
- * Return: none (void function)
+ * quick_sort - calculates initial values for sort_quickly
+ * @array: array to sort
+ * @size: size of array
  */
 void quick_sort(int *array, size_t size)
 {
-	size_t lo, hi, p_index;
+	size_t lo = 0;
 
 	if (!array || size < 2)
 		return;
 
-	lo = array[0];
-	hi = array[size - 1];
-
-	if (lo < hi)
-	{
-		p_index = partition(array, lo, hi);
-
-		quick_sort(array, lo, (p_index - 1));
-		quick_sort(array, (p_index + 1), hi);
-	}
+	sort_quickly(array, lo, (size - 1), size);
 }
 
 /**
- * partition: Sets the pivot and alligns elements to the
- * left of the pivot point in ascending order.
- *
- * @lo: First index, moves to right.
- * @hi: End of array, where partition is set initially.
- *
- * Return: Next pivot point.
+ * sort_quickly - function wrapped by quick_sort
+ * @array: array passed from quick_sort
+ * @lo: low index
+ * @hi: high index
  */
-size_t partition(int *array, size_t lo, size_t hi)
+void sort_quickly(int *array, size_t lo, size_t hi, size_t size)
+{
+	size_t p_index;
+
+	if (lo < hi)
+	{
+		p_index = partition(array, lo, hi, size);
+
+		sort_quickly(array, lo, (p_index - 1), size);
+		sort_quickly(array, (p_index + 1), hi, size);
+	}
+
+}
+
+/**
+ * partition - Sets the pivot and alligns elements to the
+ * left of the pivot point in ascending order
+ *
+ * @lo: first index, moves to right
+ * @hi: end of array, where partition is set initially
+ *
+ * return: Next pivot point
+ */
+size_t partition(int *array, size_t lo, size_t hi, size_t size)
 {
 	int swap;	
 	size_t j, i = lo - 1;
 
-	for (j = lo; j <= hi - 1; j++)
+	for (j = lo; j <= (hi - 1); j++)
 	{
-		if (array[j] <= arr[hi])
+		if (array[j] <= array[hi])
 		{
 			i++;
-			swap = arr[i];
-			arr[i] = arr[j];
-			arr[j] = swap;
+			swap = array[i];
+			array[i] = array[j];
+			array[j] = swap;
+			print_array(array, size);
 		}
 	}
-	swap = arr[i + 1];
-	arr[i + 1] = arr[hi];
-	arr[hi] = swap;
+
+	swap = array[i + 1];
+	array[i + 1] = array[hi];
+	array[hi] = swap;
+	print_array(array, size);
 
 	return (i + 1);
 }
