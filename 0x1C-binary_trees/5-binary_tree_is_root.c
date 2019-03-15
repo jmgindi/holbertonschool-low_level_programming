@@ -1,14 +1,17 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_is_leaf - returns 1 if the node is a leaf, or 0
+ * binary_tree_is_root - returns 1 if the node is a root, or 0
  * @node: node to check
  *
- * Return: 1 if leaf, 0 if not
+ * Return: 1 if root, 0 if not
  */
 
-int binary_tree_is_leaf(const binary_tree_t *node)
+int binary_tree_is_root(const binary_tree_t *node)
 {
+	if (!node)
+		return (0);
+
 	if (!(node->parent))
 		return (1);
 
